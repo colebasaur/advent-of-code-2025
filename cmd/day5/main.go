@@ -89,6 +89,7 @@ func main() {
 	if err != nil {
 		panic("Hey man... you gotta figure this out with this file opening")
 	}
+	defer file.Close()
 	scanner := bufio.NewScanner(file)
 
 	ranges := []Range{}
