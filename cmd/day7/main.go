@@ -66,20 +66,11 @@ func Part2(g Grid) {
 				delete(activeIndexes, j)
 				// if left on the board
 				if left >= 0 {
-					// if left has nothing, set to ttoal
-					if activeIndexes[left] == 0 {
-						activeIndexes[left] = totalPaths
-					} else {
-						activeIndexes[left] += totalPaths
-					}
+					activeIndexes[left] += totalPaths
 				}
 				// if right on the board
 				if right < len(row) {
-					if activeIndexes[right] == 0 {
-						activeIndexes[right] = totalPaths
-					} else {
-						activeIndexes[right] += totalPaths
-					}
+					activeIndexes[right] += totalPaths
 				}
 			}
 		}
